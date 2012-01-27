@@ -53,7 +53,7 @@
 					 .not('.move')
 					 .bind('mouseenter',function(){
 						var $this = $(this);
-						var offsetLeft = $this.offset().left + $(window).width() - ($this.outerWidth() + 20);
+						var offsetLeft = $(window).width() - ($this.outerWidth() + 20);
 						//slide in the description
 						$('#slidingMenuDesc > div:nth-child('+ parseInt($this.index()) +')').stop(true).animate({'width':offsetLeft+'px'},400, 'easeOutExpo');
 						//move the absolute div to this item
@@ -61,7 +61,6 @@
 					  })
 					  .bind('mouseleave',function(){
 						var $this = $(this);
-						var offsetLeft = $this.offset().left - 20;
 						//slide out the description
 						$('#slidingMenuDesc > div:nth-child('+ parseInt($this.index()) +')').stop(true).animate({'width':'0px'},400, 'easeOutExpo');
 					  });
